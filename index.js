@@ -45,7 +45,10 @@ function calculateHours(volunteers) {
         };
     });
 }
+function byHours(a, b) {
+    return b.hours - a.hours;
+}
 const combinedVolunteers = combineVolunteers([].concat(wolf_point_log_1.wolfPointVolunteers, raccoon_meadows_log_1.raccoonMeadowsVolunteers));
 console.log(combinedVolunteers);
 const result = calculateHours(combinedVolunteers);
-console.log(result);
+console.log(result.sort(byHours));
